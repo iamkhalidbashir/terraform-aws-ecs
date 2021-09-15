@@ -30,7 +30,7 @@ resource "aws_iam_role_policy_attachment" "svc" {
 resource "aws_cloudwatch_log_group" "svc" {
   count = "${length(var.log_groups)}"
   name  = "${element(var.log_groups, count.index)}"
-  tags  = "${merge(var.tags, map("Name", format("%s", var.name)))}"
+  tags  = "${merge(var.tags, tomap("Name", format("%s", var.name)))}"
 }
 
 resource "aws_ecs_service" "svc" {
