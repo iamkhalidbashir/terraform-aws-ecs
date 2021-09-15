@@ -63,8 +63,8 @@ module "alb" {
   log_bucket_name          = "${var.log_bucket_name != "" ? var.log_bucket_name : format("%s-logs", var.name)}"
   log_location_prefix      = "alb"
 
-  subnets = ["${var.vpc_subnets}"]
-  tags    = "${var.tags}"
+  subnets = var.vpc_subnets
+  tags    = var.tags
   vpc_id  = "${var.vpc_id}"
 }
 
