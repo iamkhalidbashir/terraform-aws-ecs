@@ -100,7 +100,7 @@ resource "aws_security_group_rule" "instance_out_all" {
 data "template_file" "user_data" {
   template = "${file("${path.module}/user_data.sh")}"
 
-  vars {
+  vars = {
     additional_user_data_script = "${var.additional_user_data_script}"
     ecs_cluster                 = "${aws_ecs_cluster.ecs.name}"
     log_group                   = "${aws_cloudwatch_log_group.instance.name}"
