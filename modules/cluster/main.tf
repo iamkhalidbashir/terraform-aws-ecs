@@ -122,7 +122,7 @@ data "aws_ami" "ecs" {
 
   filter {
     name   = "architecture"
-    values = var.ami_architecture
+    values = var.ami_architectures
   }
 
   owners = ["amazon"]
