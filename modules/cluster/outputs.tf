@@ -9,3 +9,7 @@ output "instance_sg_id" {
 output "instance_role" {
   value = "${aws_iam_role.instance.name}"
 }
+
+output "cloudwatch_log_group" {
+  value = aws_cloudwatch_log_group.instance.name
+}
