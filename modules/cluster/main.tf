@@ -112,12 +112,17 @@ data "aws_ami" "ecs" {
 
   filter {
     name   = "name"
-    values = ["amzn-ami-*-amazon-ecs-optimized"]
+    values = var.ami_names
   }
 
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
+  }
+
+  filter {
+    name   = "architecture"
+    values = var.ami_architecture
   }
 
   owners = ["amazon"]

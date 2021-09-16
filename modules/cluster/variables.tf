@@ -60,3 +60,13 @@ variable "vpc_subnets" {
   description = "List of VPC subnets to put instances in"
   default     = []
 }
+
+variable "ami_names" {
+  description = "List of ami names filter"
+  default     = ["amzn-ami-*-amazon-ecs-optimized"]
+}
+
+variable "ami_architecture" {
+  description = "List of ami names filter"
+  default     = ["x86_64"]
+}
