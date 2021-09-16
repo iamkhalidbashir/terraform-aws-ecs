@@ -66,7 +66,7 @@ variable "ami_names" {
   default     = ["amzn-ami-*-amazon-ecs-optimized"]
 }
 
-variable "ami_architecture" {
-  description = "List of ami names filter"
+variable "ami_architectures" {
+  description = "List of ami architectures filter"
   default     = ["x86_64"]
 }
